@@ -10,11 +10,11 @@ using NUnit.Framework;
 
 namespace Hadoken.Pages
 {
-    internal class SearchResults
+    internal class FlightResults
     {
         private IWebDriver Driver { get; set; }
 
-        public SearchResults(IWebDriver driver)
+        public FlightResults(IWebDriver driver)
         {
             Driver = driver;
         }
