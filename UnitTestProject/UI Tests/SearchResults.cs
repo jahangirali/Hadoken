@@ -20,8 +20,6 @@ namespace Hadoken.UI_Tests
 
 
             
-
-
         }
     }
    
