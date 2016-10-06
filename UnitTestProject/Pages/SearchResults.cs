@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,10 +10,15 @@ using NUnit.Framework;
 
 namespace Hadoken.Pages
 {
-    class SearchResults
+    internal class SearchResults
     {
-         
-        IWebDriver Driver = new ChromeDriver();
+        private IWebDriver Driver { get; set; }
+
+        public SearchResults(IWebDriver driver)
+        {
+            Driver = driver;
+        }
+
         [SetUp]
         public void Setup()
         {
