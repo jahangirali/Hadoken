@@ -19,6 +19,9 @@ namespace Hadoken.Pages
             Driver = driver;
          }
 
+        #region OneWayCheckBox
+        
+       
         private IWebElement OneWayCheckBox()
         {
             return Driver.FindElement(By.Id("label-one-way"));
@@ -34,6 +37,14 @@ namespace Hadoken.Pages
             return OneWayCheckBox().Displayed;
         }
 
+        public bool IsOneWayCheckBoxChecked()
+        {
+            return OneWayCheckBox().Selected;
+        }
+        #endregion
+
+        #region OriginField
+
         private IWebElement OriginField()
         {
             return Driver.FindElement(By.Name("origin"));
@@ -43,6 +54,8 @@ namespace Hadoken.Pages
         {
             return OriginField().Displayed;
         }
+
+        #endregion
 
         private IWebElement DestinationField()
         {
@@ -116,5 +129,26 @@ namespace Hadoken.Pages
         {
             return BtnShowFlights().Displayed;
         }
+
+        
+
+        public void EnterTextInFromField(string originAirportName)
+        {
+            OriginField().Clear();
+            OriginField().SendKeys(originAirportName);
+            OriginField().Submit();
+        }
+
+        public void EnterTextInToField(string destinationAirportName)
+        {
+            DestinationField().SendKeys(destinationAirportName);
+            DestinationField().Submit();
+            DestinationField().SendKeys(Keys.Tab);
+        }
+
+        //public bool GetFromFieldText()
+        //{
+        //    return;
+        //}
     }
 }

@@ -69,6 +69,7 @@
     <Compile Include="Pages\ForgottenPassword.cs" />
     <Compile Include="Pages\FlightResults.cs" />
     <Compile Include="UI Tests\FCPD-13SearchPod-OneWayCheckBox.cs" />
+    <Compile Include="UI Tests\FCPD-422 OneWayFlightSearchResults.cs" />
     <Compile Include="UI Tests\UITestSearchPod.cs" />
     <Compile Include="UI Tests\SearchResults.cs" />
     <Compile Include="UI Tests\TestForgottenPassword.cs" />

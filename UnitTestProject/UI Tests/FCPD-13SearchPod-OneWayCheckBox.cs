@@ -42,6 +42,7 @@ namespace Hadoken.UI_Tests
         //    Assert.That(SearchPodPage.ClickCheckBox(), Is.False);
             
         //}
+        
 
         [TearDown]
         public void TearDown()
