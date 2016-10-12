@@ -39,7 +39,7 @@ namespace Hadoken.Pages
 
         public bool IsOneWayCheckBoxChecked()
         {
-            return OneWayCheckBox().Selected;
+            return OneWayCheckBox().Enabled;
         }
         
         #endregion
