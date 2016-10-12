@@ -25,35 +25,35 @@ namespace Hadoken.UI_Tests
         [Test]
         public void Test01CheckboxIsDisplayed()
         {
-            var SearchPodPage = new SearchPod(Driver);
+            var searchPodPage = new SearchPod(Driver);
 
-            Assert.That(SearchPodPage.IsOneWayCheckBoxDisplayed, Is.True, "One Way checkbox is not displayed.");
+            Assert.That(searchPodPage.IsOneWayCheckBoxDisplayed, Is.True, "One Way checkbox is not displayed.");
         }
 
         [Test]
         public void Test02ClickCheckbox()
         {
-            var SearchPodPage = new SearchPod(Driver);
+            var searchPodPage = new SearchPod(Driver);
 
-            SearchPodPage.ClickCheckBox();
+            searchPodPage.ClickCheckBox();
 
-            Assert.That(SearchPodPage.IsOneWayCheckBoxChecked, Is.True);
+            Assert.That(searchPodPage.IsOneWayCheckBoxChecked, Is.True);
         }
 
 
         [Test]
         public void Test03ReturningFieldNotDisplayed()
         {
-            var SearchPodPage = new SearchPod(Driver);
-            SearchPodPage.ClickCheckBox();
+            var searchPodPage = new SearchPod(Driver);
+            searchPodPage.ClickCheckBox();
             
-            Assert.That(SearchPodPage.IsReturnDateFieldDisplayed, Is.False);
+            Assert.That(searchPodPage.IsReturnDateFieldDisplayed, Is.False);
         }
 
-        //[TearDown]
-        //public void TearDown()
-        //{
-        //    Driver.Quit();
-        //}
+        [TearDown]
+        public void TearDown()
+        {
+            Driver.Quit();
+        }
     }
 }
