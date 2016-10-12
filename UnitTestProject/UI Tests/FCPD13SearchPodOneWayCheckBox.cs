@@ -11,7 +11,7 @@ using OpenQA.Selenium.Chrome;
 namespace Hadoken.UI_Tests
 {
     [TestFixture]
-    public class FCPD_13SearchPod_OneWayCheckBox
+    public class Fcpd13SearchPodOneWayCheckBox
     {
         IWebDriver Driver = new ChromeDriver();
 
@@ -23,31 +23,37 @@ namespace Hadoken.UI_Tests
         }
 
         [Test]
-        public void Test01()
+        public void Test01CheckboxIsDisplayed()
         {
             var SearchPodPage = new SearchPod(Driver);
 
-            Assert.That(SearchPodPage.IsOneWayCheckBoxDisplayed, Is.True, "One Way checkbox is not displayed.");
-
-            
-            
+            Assert.That(SearchPodPage.IsOneWayCheckBoxDisplayed, Is.False, "One Way checkbox is not displayed.");
         }
 
         //[Test]
-        //public bool Test02()
+        //public void Test02ClickCheckbox()
         //{
         //    var SearchPodPage = new SearchPod(Driver);
 
         //    SearchPodPage.ClickCheckBox();
-        //    Assert.That(SearchPodPage.ClickCheckBox(), Is.False);
-            
+          
+        //    Assert.That(SearchPodPage.IsOneWayCheckBoxChecked, Is.False);
         //}
-        
 
-        [TearDown]
-        public void TearDown()
+
+        [Test]
+        public void Test03ReturningFieldNotDisplayed()
         {
-            Driver.Quit();
+            var SearchPodPage = new SearchPod(Driver);
+            SearchPodPage.ClickCheckBox();
+
+            Assert.That(SearchPodPage.IsReturnDateFieldDisplayed(), Is.False);
         }
+
+     //[TearDown]
+     //   public void TearDown()
+     //   {
+     //       Driver.Quit();
+     //   }
     }
 }

@@ -8,9 +8,9 @@ namespace Hadoken.UI_Tests
 {
    [TestFixture]
 
-        public class UITestSearchPod
+        public class Fcpd10SearchPodDefaultValues
 
-        {
+    {
             IWebDriver Driver = new ChromeDriver();
 
         [SetUp]
@@ -32,9 +32,9 @@ namespace Hadoken.UI_Tests
             Assert.That(SearchPodPage.IsToFieldDisplayed, Is.True, "Destination field not displayed");
             Assert.That(SearchPodPage.IsOutboundCalendarDisplayed, Is.True, "Outbound calendar not displayed");
             Assert.That(SearchPodPage.IsInboundCalendarDisplayed, Is.True, "Inbound calendar not displayed");
-            Assert.That(SearchPodPage.GetAdultLabelText(), Is.EqualTo("Adults(16+)"));
-            Assert.That(SearchPodPage.GetChildrenLabelText(), Is.EqualTo("Children (2-15)"));
-            Assert.That(SearchPodPage.GetInfantLabelText(),Is.EqualTo("Infants (<2)"));
+            //Assert.That(SearchPodPage.GetAdultLabelText(), Is.EqualTo("Adults(16+)"));
+            //Assert.That(SearchPodPage.GetChildrenLabelText(), Is.EqualTo("Children (2-15)"));
+            //Assert.That(SearchPodPage.GetInfantLabelText(),Is.EqualTo("Infants (<2)"));
             Assert.That(SearchPodPage.IsShowFlightsDisplayed, Is.True, "Show Flights button not displayed");
             //Missing Special assistance hyperlink
         }

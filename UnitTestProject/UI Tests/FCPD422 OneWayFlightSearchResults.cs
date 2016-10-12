@@ -11,7 +11,7 @@ using Hadoken.Pages;
 
 namespace Hadoken.UI_Tests
 {
-    class FCPD_422_OneWayFlightSearchResults
+    class Fcpd422OneWayFlightSearchResults
     {
         IWebDriver Driver = new ChromeDriver();
         [SetUp]
@@ -28,22 +28,22 @@ namespace Hadoken.UI_Tests
             Driver.Navigate().GoToUrl("https://fcpqa.tc-nonprod.easyjet.com/us/");
             Driver.Manage().Window.Maximize();
 
-            var SearchPodPage = new SearchPod(Driver);
+            var searchPodPage = new SearchPod(Driver);
 
-            SearchPodPage.ClickCheckBox();
-            SearchPodPage.EnterTextInFromField("AMS");
-            SearchPodPage.EnterTextInToField("LTN");
-
-           Assert.That(SearchPodPage.IsOneWayCheckBoxChecked, Is.False);
+            searchPodPage.ClickCheckBox();
+            searchPodPage.EnterTextInFromField("AMS");
+            searchPodPage.EnterTextInToField("LTN");
+            searchPodPage.ClickInboundCalendarImage();
+           Assert.That(searchPodPage.IsOneWayCheckBoxChecked, Is.False);
             //Assert.That(SearchPodPage.GetFromFieldText, Equals("AMS"));
             
         }
 
-        [Test]
-        public void Test02()
-        {
+        //[Test]
+        //public void Test02()
+        //{
             
-        }
+        //}
 
         //[OneTimeTearDownAttribute]
         //public void TestTearDown()

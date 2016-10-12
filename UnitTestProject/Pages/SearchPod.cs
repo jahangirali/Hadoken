@@ -41,6 +41,7 @@ namespace Hadoken.Pages
         {
             return OneWayCheckBox().Selected;
         }
+        
         #endregion
 
         #region OriginField
@@ -57,20 +58,32 @@ namespace Hadoken.Pages
 
         #endregion
 
+
+        #region DestinationField
         private IWebElement DestinationField()
         {
             return Driver.FindElement(By.Name("destination"));
         }
+
         internal bool IsToFieldDisplayed()
         {
             return DestinationField().Displayed;
         }
+
+        #endregion
+
+
+        #region MyRegion
+
+
+
 
         private IWebElement OutboundCalendar()
         {
             return Driver.FindElement(By.Id("outbound-calendar-image"));
         }
 
+        
         internal bool IsOutboundCalendarDisplayed()
         {
             return OutboundCalendar().Displayed;
@@ -89,6 +102,8 @@ namespace Hadoken.Pages
         {
             return InboundCalendar().Displayed;
         }
+
+        #endregion
         private IWebElement AdultLabel()
         {
             return Driver.FindElement(By.CssSelector("div[id = 'adults-section'] span"));
@@ -146,9 +161,32 @@ namespace Hadoken.Pages
             DestinationField().SendKeys(Keys.Tab);
         }
 
-        //public bool GetFromFieldText()
-        //{
-        //    return;
-        //}
+        
+        public void ClickInboundCalendarImage()
+        {
+            InboundCalendar().Click();
+
+        }
+
+        public void IsOneWayCheckBoxSelected()
+        {
+            ClickCheckBox();
+            
+        }
+
+        #region ReturnDate
+       
+
+        private IWebElement ReturnDateField()
+        {
+            return Driver.FindElement(By.ClassName("return-date-picker"));
+        }
+
+        internal bool IsReturnDateFieldDisplayed()
+        {
+            return ReturnDateField().Displayed;
+        }
+
+        #endregion
     }
 }
