@@ -27,7 +27,7 @@ namespace Hadoken.UI_Tests
         {
             var SearchPodPage = new SearchPod(Driver);
 
-            Assert.That(SearchPodPage.IsOneWayCheckBoxDisplayed, Is.False, "One Way checkbox is not displayed.");
+            Assert.That(SearchPodPage.IsOneWayCheckBoxDisplayed, Is.True, "One Way checkbox is not displayed.");
         }
 
         [Test]
@@ -46,8 +46,8 @@ namespace Hadoken.UI_Tests
         {
             var SearchPodPage = new SearchPod(Driver);
             SearchPodPage.ClickCheckBox();
-
-            Assert.That(SearchPodPage.IsOneWayCheckBoxChecked(), Is.True);
+            
+            Assert.That(SearchPodPage.IsReturnDateFieldDisplayed, Is.False);
         }
 
         //[TearDown]
