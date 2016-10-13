@@ -188,5 +188,24 @@ namespace Hadoken.Pages
         }
 
         #endregion
+
+        #region SpecialAssistance
+        private IWebElement SpecialAssistanceHyperlink()
+        {
+            return Driver.FindElement(By.Id("special-assistance"));
+        }
+
+        public bool IsSpecialAssistanceDisplayed()
+        {
+            return Driver.FindElement(By.Id("special-assistance")).Displayed;
+        }
+
+        //public void ClickSpecialAssistance()
+        //{
+        //    SpecialAssistanceHyperlink().Click();
+        //}
+        #endregion 
+
     }
+
 }

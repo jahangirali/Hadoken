@@ -34,7 +34,6 @@ namespace Hadoken.UI_Tests
         public void Test02ClickCheckbox()
         {
             var searchPodPage = new SearchPod(Driver);
-
             searchPodPage.ClickCheckBox();
 
             Assert.That(searchPodPage.IsOneWayCheckBoxChecked, Is.True);
@@ -48,6 +47,15 @@ namespace Hadoken.UI_Tests
             searchPodPage.ClickCheckBox();
             
             Assert.That(searchPodPage.IsReturnDateFieldDisplayed, Is.False);
+        }
+
+        [Test]
+        public void Test04SpecialAssistanceIsDisplayed()
+        {
+            var searchPodPage = new SearchPod(Driver);
+            searchPodPage.IsSpecialAssistanceDisplayed();
+
+            Assert.That(searchPodPage.IsSpecialAssistanceDisplayed, Is.True, "Special Assistance link missing");
         }
 
         [TearDown]
