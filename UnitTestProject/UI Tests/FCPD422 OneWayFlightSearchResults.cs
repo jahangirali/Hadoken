@@ -34,21 +34,30 @@ namespace Hadoken.UI_Tests
             searchPodPage.EnterTextInFromField("AMS");
             searchPodPage.EnterTextInToField("LTN");
             searchPodPage.ClickInboundCalendarImage();
-           Assert.That(searchPodPage.IsOneWayCheckBoxChecked, Is.False);
+           Assert.That(searchPodPage.IsOneWayCheckBoxChecked, Is.True);
             //Assert.That(SearchPodPage.GetFromFieldText, Equals("AMS"));
+            
             
         }
 
-        //[Test]
-        //public void Test02()
-        //{
-            
-        //}
+        [Test]
+        public void Test02()
+        {
+            Driver.Navigate().GoToUrl("https://fcpqa.tc-nonprod.easyjet.com/us/");
+            Driver.Manage().Window.Maximize();
 
-        //[OneTimeTearDownAttribute]
-        //public void TestTearDown()
-        //{
-        //    Driver.Quit();
-        //}
+            var searchPodPage = new SearchPod(Driver);
+
+            searchPodPage.ClickCheckBox();
+            searchPodPage.ClickInboundCalendarImage();
+            Assert.That(searchPodPage.IsInboundCalendarDisplayed, Is.False);
+        }
+
+        [OneTimeTearDownAttribute]
+        public void TestTearDown()
+        {
+            Driver.Quit();
+            Driver.Manage().Cookies.DeleteCookieNamed("easyjet*");
+        }
     }
 }

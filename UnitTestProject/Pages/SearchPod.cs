@@ -162,9 +162,9 @@ namespace Hadoken.Pages
         }
 
         
-        public void ClickInboundCalendarImage()
+        public bool ClickInboundCalendarImage()
         {
-            InboundCalendar().Click();
+            return InboundCalendar().Enabled;
 
         }
 

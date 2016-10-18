@@ -65,10 +65,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Pages\DrawerAllAirports.cs" />
     <Compile Include="Pages\SearchPod.cs" />
     <Compile Include="Pages\ForgottenPassword.cs" />
     <Compile Include="Pages\FlightResults.cs" />
     <Compile Include="UI Tests\FCPD13SearchPodOneWayCheckBox.cs" />
+    <Compile Include="UI Tests\FCPD19 Select Destination.cs" />
     <Compile Include="UI Tests\FCPD422 OneWayFlightSearchResults.cs" />
     <Compile Include="UI Tests\FCPD10SearchPodDefaultValues.cs" />
     <Compile Include="UI Tests\SearchResults.cs" />
