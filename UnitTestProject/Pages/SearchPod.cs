@@ -19,14 +19,13 @@ namespace Hadoken.Pages
             Driver = driver;
          }
 
-        #region OneWayCheckBox
         
-       
         private IWebElement OneWayCheckBox()
         {
             return Driver.FindElement(By.Id("label-one-way"));
         }
 
+        
         internal void ClickCheckBox()
         {
             OneWayCheckBox().Click();
@@ -42,7 +41,7 @@ namespace Hadoken.Pages
             return OneWayCheckBox().Enabled;
         }
         
-        #endregion
+        
 
         #region OriginField
 
@@ -55,6 +54,7 @@ namespace Hadoken.Pages
         {
             return OriginField().Displayed;
         }
+
 
         #endregion
 
@@ -204,8 +204,24 @@ namespace Hadoken.Pages
         //{
         //    SpecialAssistanceHyperlink().Click();
         //}
-        #endregion 
+        #endregion
 
+        public void DepartureAirportList()
+        {
+            Driver.FindElement(By.Id("outbound-airport-image"));
+
+            //By.CssSelector("div[id = 'infants-section'] span"
+        }
+
+        public bool IsDepartureAirportListDisplayed()
+        {
+            return Driver.FindElement(By.Id("outbound-airport-image")).Displayed;
+        }
+
+        public void ClickDepartureAirportList()
+        {
+            Driver.FindElement(By.Id("outbound-airport-image")).Click();
+        }
     }
 
 }

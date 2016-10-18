@@ -16,32 +16,21 @@ namespace Hadoken.Pages
         }
 
         /// ELEMENTS
-        private IWebElement allAirportsButton()
+        private IWebElement AllAirportsButton()
         {
             return Driver.FindElement(By.Id("all-airports-button"));
         }
 
-        //private IWebElement OutboundCalendar()
-        //{
-        //    return Driver.FindElement(By.Id("outbound-calendar-image"));
-        //}
-
-
-        //internal bool IsOutboundCalendarDisplayed()
-        //{
-        //    return OutboundCalendar().Displayed;
-        //}
-
-
+       
         /// ACTIONS
-        internal bool IsAllAirportsDisplayed()
+        public bool IsAllAirportsDisplayed()
         {
-            return allAirportsButton().Displayed;
+            return AllAirportsButton().Displayed;
         }
 
         internal void ClickAllAirportsButton()
         {
-            allAirportsButton().Click();
+            AllAirportsButton().Click();
         }
         
     }
