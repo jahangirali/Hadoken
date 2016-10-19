@@ -61,6 +61,7 @@ namespace Hadoken.UI_Tests
         [TearDown]
         public void TearDown()
         {
+            Driver.Manage().Cookies.DeleteCookieNamed("_easyjet");
             Driver.Quit();
         }
     }

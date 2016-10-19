@@ -23,7 +23,7 @@ namespace Hadoken.UI_Tests
         }
 
         [Test]
-        public void Test01()
+        public void Test01CheckOneWayCheckBoxIsChecked()
         {
             Driver.Navigate().GoToUrl("https://fcpqa.tc-nonprod.easyjet.com/us/");
             Driver.Manage().Window.Maximize();
@@ -34,14 +34,13 @@ namespace Hadoken.UI_Tests
             searchPodPage.EnterTextInFromField("AMS");
             searchPodPage.EnterTextInToField("LTN");
             searchPodPage.ClickInboundCalendarImage();
-           Assert.That(searchPodPage.IsOneWayCheckBoxChecked, Is.True);
-            //Assert.That(SearchPodPage.GetFromFieldText, Equals("AMS"));
-            
-            
+
+            Assert.That(searchPodPage.IsOneWayCheckBoxChecked, Is.True);
+         
         }
 
         [Test]
-        public void Test02()
+        public void Test02CheckIsReturnFieldIsNotDisplayed()
         {
             Driver.Navigate().GoToUrl("https://fcpqa.tc-nonprod.easyjet.com/us/");
             Driver.Manage().Window.Maximize();
@@ -50,14 +49,15 @@ namespace Hadoken.UI_Tests
 
             searchPodPage.ClickCheckBox();
             searchPodPage.ClickInboundCalendarImage();
+
             Assert.That(searchPodPage.IsInboundCalendarDisplayed, Is.False);
         }
 
-        [OneTimeTearDownAttribute]
+        [OneTimeTearDown]
         public void TestTearDown()
         {
+            Driver.Manage().Cookies.DeleteCookieNamed("_easy");
             Driver.Quit();
-            Driver.Manage().Cookies.DeleteCookieNamed("easyjet*");
         }
     }
 }

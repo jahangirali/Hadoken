@@ -21,27 +21,24 @@ namespace Hadoken.UI_Tests
         }
 
         [Test]
-        public void Test06()
+        public void Test01CheckEmailAddressFieldIsDisplayed()
         {
-            //Test to check Email address field is displayed
             var EmailAddress = driver.FindElement(By.Name("EmailAddress"));
 
             Assert.AreEqual(EmailAddress, EmailAddress);
         }
 
         [Test]
-        public void Test07()
+        public void Test02CheckConfirmEmailAddressIsDisplayed()
         {
-            //Test to check Confirm email address field is displayed
             var ConfirmEmailAddress = driver.FindElement(By.Id("confirmEmailAddress"));
 
             Assert.AreEqual(ConfirmEmailAddress, ConfirmEmailAddress);
         }
 
         [Test]
-        public void Test08()
+        public void Test03CancelButtonIsDisplayed()
         {
-            //Confirm Cancel button is displayed
             var btnCancel = driver.FindElement(By.Id("btnCancel"));
 
             Assert.AreEqual(btnCancel, btnCancel);
@@ -49,9 +46,8 @@ namespace Hadoken.UI_Tests
         }
 
         [Test]
-        public void Test09()
+        public void Test04CheckConfirmButtonIsDisplayed()
         {
-            //Test to check Confirm button is displayed
             var btnSend = driver.FindElement(By.Id("btnSend"));
 
             Assert.AreEqual("Confirm", btnSend.Text);

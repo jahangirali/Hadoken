@@ -206,21 +206,19 @@ namespace Hadoken.Pages
         //}
         #endregion
 
-        public void DepartureAirportList()
+        public void DestinationAirportList()
         {
-            Driver.FindElement(By.Id("outbound-airport-image"));
-
-            //By.CssSelector("div[id = 'infants-section'] span"
+            Driver.FindElement(By.Id("destination-airport-image"));
         }
 
-        public bool IsDepartureAirportListDisplayed()
+        public bool IsDestinationAirportListDisplayed()
         {
-            return Driver.FindElement(By.Id("outbound-airport-image")).Displayed;
+            return Driver.FindElement(By.Id("destination-airport-image")).Displayed;
         }
 
-        public void ClickDepartureAirportList()
+        public void ClickDestinationAirportList()
         {
-            Driver.FindElement(By.Id("outbound-airport-image")).Click();
+            Driver.FindElement(By.Id("destination-airport-image")).Click();
         }
     }
 

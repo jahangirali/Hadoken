@@ -27,19 +27,19 @@ namespace Hadoken.UI_Tests
         {
             var searchPodPage = new SearchPod(Driver);
             var drawerAllAirports = new DrawerAllAirports(Driver);
-            searchPodPage.ClickDepartureAirportList();
+            searchPodPage.ClickDestinationAirportList();
 
             Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(3));
             Assert.That(drawerAllAirports.IsAllAirportsDisplayed, Is.True);
           
           
         }
-    [TearDown]
+    //[TearDown]
 
-    public void TearDown()
-    {
-        Driver.Quit();
-    }
+    //public void TearDown()
+    //{
+    //    Driver.Quit();
+    //}
 
 }
     }
