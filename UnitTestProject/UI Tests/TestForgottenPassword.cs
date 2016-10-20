@@ -5,25 +5,24 @@ using OpenQA.Selenium.Chrome;
 namespace Hadoken.UI_Tests
 {
     [TestFixture]
-    public class TestForgottenPassword 
-        //: TestBase
+    public class TestForgottenPassword : TestBase
     { 
-   IWebDriver driver = new ChromeDriver();
+ 
         
     
         [SetUp]
 
         public void Setup()
         {
-            driver.Navigate().GoToUrl("https://www.easyjet.com/EN/secure/AccountManagement.mvc/PasswordReset");
-            driver.Manage().Window.Maximize();
+            Driver.Navigate().GoToUrl("https://www.easyjet.com/EN/secure/AccountManagement.mvc/PasswordReset");
+            Driver.Manage().Window.Maximize();
 
         }
 
         [Test]
         public void Test01CheckEmailAddressFieldIsDisplayed()
         {
-            var EmailAddress = driver.FindElement(By.Name("EmailAddress"));
+            var EmailAddress = Driver.FindElement(By.Name("EmailAddress"));
 
             Assert.AreEqual(EmailAddress, EmailAddress);
         }
@@ -31,7 +30,7 @@ namespace Hadoken.UI_Tests
         [Test]
         public void Test02CheckConfirmEmailAddressIsDisplayed()
         {
-            var ConfirmEmailAddress = driver.FindElement(By.Id("confirmEmailAddress"));
+            var ConfirmEmailAddress = Driver.FindElement(By.Id("confirmEmailAddress"));
 
             Assert.AreEqual(ConfirmEmailAddress, ConfirmEmailAddress);
         }
@@ -39,7 +38,7 @@ namespace Hadoken.UI_Tests
         [Test]
         public void Test03CancelButtonIsDisplayed()
         {
-            var btnCancel = driver.FindElement(By.Id("btnCancel"));
+            var btnCancel = Driver.FindElement(By.Id("btnCancel"));
 
             Assert.AreEqual(btnCancel, btnCancel);
             
@@ -48,18 +47,14 @@ namespace Hadoken.UI_Tests
         [Test]
         public void Test04CheckConfirmButtonIsDisplayed()
         {
-            var btnSend = driver.FindElement(By.Id("btnSend"));
+            var btnSend = Driver.FindElement(By.Id("btnSend"));
 
             Assert.AreEqual("Confirm", btnSend.Text);
             Assert.That(btnSend.Displayed, Is.True);
 
         }
 
-        [OneTimeTearDown]
-        public void TearDown()
-        {
-            driver.Quit();
-        }
+       
 
     }
 

@@ -11,9 +11,9 @@ using Hadoken.Pages;
 
 namespace Hadoken.UI_Tests
 {
-    class Fcpd422OneWayFlightSearchResults
+    class Fcpd422OneWayFlightSearchResults : TestBase
     {
-        IWebDriver Driver = new ChromeDriver();
+        
         [SetUp]
         public void Setup()
         {
@@ -53,11 +53,6 @@ namespace Hadoken.UI_Tests
             Assert.That(searchPodPage.IsInboundCalendarDisplayed, Is.False);
         }
 
-        [OneTimeTearDown]
-        public void TestTearDown()
-        {
-            Driver.Manage().Cookies.DeleteCookieNamed("_easy");
-            Driver.Quit();
-        }
+       
     }
 }

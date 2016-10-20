@@ -11,9 +11,9 @@ using OpenQA.Selenium.Chrome;
 namespace Hadoken.UI_Tests
 {
     [TestFixture]
-    public class Fcpd13SearchPodOneWayCheckBox
+    public class Fcpd13SearchPodOneWayCheckBox: TestBase
     {
-        IWebDriver Driver = new ChromeDriver();
+      
 
         [SetUp]
         public void SetUp()
@@ -58,11 +58,6 @@ namespace Hadoken.UI_Tests
             Assert.That(searchPodPage.IsSpecialAssistanceDisplayed, Is.True, "Special Assistance link missing");
         }
 
-        [TearDown]
-        public void TearDown()
-        {
-            Driver.Manage().Cookies.DeleteCookieNamed("_easyjet");
-            Driver.Quit();
-        }
+        
     }
 }

@@ -7,11 +7,8 @@ using OpenQA.Selenium.Support.Events;
 namespace Hadoken.UI_Tests
 {
     [TestFixture]
-    public class TestLoginPage : TestBase
+    public class TestLogin : TestBase
     {
-        //IWebDriver driver = new ChromeDriver();
-       // WebDriverWait wait 
-
         [SetUp]
 
         public void Setup()
@@ -64,11 +61,6 @@ namespace Hadoken.UI_Tests
 
         }
 
-        [TearDown]
-        public void TearDown()
-        {
-            Driver.Manage().Cookies.DeleteCookieNamed("_easyjet");
-            Driver.Quit();
-        }
+       
     }
 }

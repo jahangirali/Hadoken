@@ -8,11 +8,10 @@ namespace Hadoken.UI_Tests
 {
    [TestFixture]
 
-        public class Fcpd10SearchPodDefaultValues
+        public class Fcpd10SearchPodDefaultValues : TestBase
 
     {
-            IWebDriver Driver = new ChromeDriver();
-
+            
         [SetUp]
             public void Setup()
             {
@@ -35,7 +34,7 @@ namespace Hadoken.UI_Tests
            //Assert.That(SearchPodPage.GetChildrenLabelText(), Is.EqualTo("Children (2-15)"),"Child label incorrect");
             Assert.That(SearchPodPage.GetInfantLabelText(),Is.EqualTo("Infants (< 2)"), "infant label incorrect");
             Assert.That(SearchPodPage.IsShowFlightsDisplayed, Is.True, "Show Flights button not displayed");
-            //Missing Special assistance hyperlink
+            //Todo Special assistance hyperlink
         }
 
 
@@ -49,11 +48,7 @@ namespace Hadoken.UI_Tests
 
             
            
-        //[OneTimeTearDown]
-        //public void TearDown()
-        //{
-        //    Driver.Quit();
-        //}
+        
     }
 
    }

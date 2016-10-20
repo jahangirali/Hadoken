@@ -11,10 +11,8 @@ using Hadoken.Pages;
 namespace Hadoken.UI_Tests
 {
     [TestFixture]
-    class FCPD19_Select_Destination
+    class FCPD19_Select_Destination : TestBase
     {
-        IWebDriver Driver = new ChromeDriver();
-
         [SetUp]
         public void SetUp()
         {
@@ -34,12 +32,7 @@ namespace Hadoken.UI_Tests
           
           
         }
-    //[TearDown]
-
-    //public void TearDown()
-    //{
-    //    Driver.Quit();
-    //}
+   
 
 }
     }
