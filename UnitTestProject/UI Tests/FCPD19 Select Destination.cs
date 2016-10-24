@@ -29,11 +29,8 @@ namespace Hadoken.UI_Tests
 
             Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(3));
             Assert.That(drawerAllAirports.IsAllAirportsDisplayed, Is.True);
-          
-          
         }
-   
-
-}
+        
     }
+}
 
