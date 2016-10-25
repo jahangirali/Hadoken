@@ -17,7 +17,7 @@ namespace Hadoken.Pages
         public SearchPod(IWebDriver driver)
         {
             Driver = driver;
-         }
+        }
 
         
         private IWebElement OneWayCheckBox()
